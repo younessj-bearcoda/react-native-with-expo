@@ -1,5 +1,5 @@
-import { ImageSourcePropType } from "react-native";
-import type { NavigationProp, ParamListBase } from "@react-navigation/native";
+import type { NavigationProp, ParamListBase } from '@react-navigation/native';
+import { ImageSourcePropType } from 'react-native';
 
 type BidItemType = {
   id: string;
@@ -16,7 +16,7 @@ type NFTItemType = {
   price: number;
   description: string;
   image: ImageSourcePropType;
-  bids: Array<BidItemType>;
+  bids: BidItemType[];
 };
 
 type WithNavigationPropType = {

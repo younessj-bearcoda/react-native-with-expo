@@ -1,5 +1,6 @@
-import { View, Text, Image, TextInput } from "react-native";
-import { COLORS, FONTS, SIZES, assets, ROUNDED } from "../constants";
+import { View, Text, Image, TextInput } from 'react-native';
+
+import { COLORS, FONTS, SIZES, assets, ROUNDED } from '../constants';
 
 type HomeHeaderPropsType = {
   onSearch: (value: string) => void;
@@ -10,27 +11,22 @@ const HomeHeader = ({ onSearch }: HomeHeaderPropsType) => {
     <View style={{ backgroundColor: COLORS.primary, padding: SIZES.font }}>
       <View
         style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Image
-          source={assets.logo}
-          resizeMode="contain"
-          style={{ width: 90, height: 25 }}
-        />
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+        <Image source={assets.logo} resizeMode="contain" style={{ width: 90, height: 25 }} />
         <View style={{ width: 45, height: 45 }}>
           <Image
             source={assets.person01}
             resizeMode="contain"
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: '100%', height: '100%' }}
           />
           <Image
             source={assets.badge}
             resizeMode="contain"
             style={{
-              position: "absolute",
+              position: 'absolute',
               width: 15,
               height: 15,
               bottom: 0,
@@ -45,8 +41,7 @@ const HomeHeader = ({ onSearch }: HomeHeaderPropsType) => {
             fontFamily: FONTS.regular,
             fontSize: SIZES.small,
             color: COLORS.white,
-          }}
-        >
+          }}>
           Hello, Victoria 👋
         </Text>
         <Text
@@ -55,8 +50,7 @@ const HomeHeader = ({ onSearch }: HomeHeaderPropsType) => {
             fontSize: SIZES.large,
             color: COLORS.white,
             marginTop: SIZES.base / 2,
-          }}
-        >
+          }}>
           Let's find a masterpiece
         </Text>
       </View>
@@ -64,25 +58,20 @@ const HomeHeader = ({ onSearch }: HomeHeaderPropsType) => {
       <View style={{ marginTop: SIZES.font }}>
         <View
           style={{
-            width: "100%",
+            width: '100%',
             borderRadius: ROUNDED.small,
             backgroundColor: COLORS.gray,
-            flexDirection: "row",
-            alignItems: "center",
+            flexDirection: 'row',
+            alignItems: 'center',
             paddingHorizontal: SIZES.font,
             paddingVertical: SIZES.small - 2,
-          }}
-        >
+          }}>
           <Image
             source={assets.search}
             resizeMode="contain"
             style={{ width: 20, height: 20, marginRight: SIZES.base }}
           />
-          <TextInput
-            placeholder="Search NFTs"
-            style={{ flex: 1 }}
-            onChangeText={onSearch}
-          />
+          <TextInput placeholder="Search NFTs" style={{ flex: 1 }} onChangeText={onSearch} />
         </View>
       </View>
     </View>

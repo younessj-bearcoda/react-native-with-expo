@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { SafeAreaView, FlatList, View } from "react-native";
+import { useState } from 'react';
+import { SafeAreaView, FlatList, View } from 'react-native';
 
-import { COLORS, NFTData } from "../constants";
-import { FocusedStatusBar, HomeHeader, NFTCard } from "../components";
+import { FocusedStatusBar, HomeHeader, NFTCard } from '../components';
+import { COLORS, NFTData } from '../constants';
 
 const Home = () => {
   const [nftData, setNftData] = useState(NFTData);
@@ -36,14 +36,13 @@ const Home = () => {
         </View>
         <View
           style={{
-            position: "absolute",
+            position: 'absolute',
             top: 0,
             bottom: 0,
             left: 0,
             right: 0,
             zIndex: -1,
-          }}
-        >
+          }}>
           <View style={{ height: 300, backgroundColor: COLORS.primary }} />
           <View style={{ flex: 1, backgroundColor: COLORS.white }} />
         </View>

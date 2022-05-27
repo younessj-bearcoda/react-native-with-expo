@@ -1,17 +1,18 @@
-import { createStackNavigator } from '@react-navigation/stack'
-import { NavigationContainer, DefaultTheme, Theme } from '@react-navigation/native'
-import { useFonts } from 'expo-font'
-import { Home, Details } from './screens'
+import { NavigationContainer, DefaultTheme, Theme } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { useFonts } from 'expo-font';
 
-const { Navigator, Screen } = createStackNavigator()
+import { Home, Details } from './screens';
+
+const { Navigator, Screen } = createStackNavigator();
 
 const theme: Theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: "transparent",
+    background: 'transparent',
   },
-}
+};
 
 const App = () => {
   const loadedFonts = useFonts({
@@ -20,19 +21,18 @@ const App = () => {
     InterMedium: require('./assets/fonts/Inter-Medium.ttf'),
     InterRegular: require('./assets/fonts/Inter-Regular.ttf'),
     InterLight: require('./assets/fonts/Inter-Light.ttf'),
-  })
+  });
 
-  if ( ! loadedFonts)
-    return null
+  if (!loadedFonts) return null;
 
   return (
     <NavigationContainer theme={theme}>
-      <Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
-        <Screen name='Home' component={Home}/>
-        <Screen name='Details' component={Details}/>
+      <Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+        <Screen name="Home" component={Home} />
+        <Screen name="Details" component={Details} />
       </Navigator>
     </NavigationContainer>
-  )
-}
+  );
+};
 
-export default App
+export default App;
