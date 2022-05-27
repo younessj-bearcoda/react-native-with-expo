@@ -1,7 +1,8 @@
-import { View, Text, Image } from "react-native";
-import { ETHPrice } from "../components/SubInfo";
-import { COLORS, SIZES, FONTS } from "../constants";
-import type { BidItemType } from "../types";
+import { View, Text, Image } from 'react-native';
+
+import { ETHPrice } from '../components/SubInfo';
+import { COLORS, SIZES, FONTS } from '../constants';
+import type { BidItemType } from '../types';
 
 type DetailsBidPropsType = {
   bid: BidItemType;
@@ -11,27 +12,21 @@ const DetailsBid = ({ bid }: DetailsBidPropsType) => {
   return (
     <View
       style={{
-        width: "100%",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         marginVertical: SIZES.base,
         paddingHorizontal: SIZES.base * 2,
-      }}
-    >
-      <Image
-        source={bid.image}
-        resizeMode="contain"
-        style={{ width: 48, height: 48 }}
-      />
+      }}>
+      <Image source={bid.image} resizeMode="contain" style={{ width: 48, height: 48 }} />
       <View>
         <Text
           style={{
             fontFamily: FONTS.semiBold,
             fontSize: SIZES.small,
             color: COLORS.primary,
-          }}
-        >
+          }}>
           Bid placed by {bid.name}
         </Text>
         <Text
@@ -40,8 +35,7 @@ const DetailsBid = ({ bid }: DetailsBidPropsType) => {
             fontSize: SIZES.small - 2,
             color: COLORS.secondary,
             marginTop: 3,
-          }}
-        >
+          }}>
           {bid.date}
         </Text>
       </View>

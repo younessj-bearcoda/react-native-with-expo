@@ -1,9 +1,10 @@
-import { View, Image, Text } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { CircleButton, RectButton } from "./Buttons";
-import SubInfo, { ETHPrice, NFTTitle } from "./SubInfo";
-import { COLORS, SIZES, SHADOWS, ROUNDED, assets } from "../constants";
-import type { NFTItemType } from "../types";
+import { useNavigation } from '@react-navigation/native';
+import { View, Image } from 'react-native';
+
+import { COLORS, SIZES, SHADOWS, ROUNDED, assets } from '../constants';
+import type { NFTItemType } from '../types';
+import { CircleButton, RectButton } from './Buttons';
+import SubInfo, { ETHPrice, NFTTitle } from './SubInfo';
 
 type NFTCardType = {
   data: NFTItemType;
@@ -20,15 +21,14 @@ const NFTCard = ({ data }: NFTCardType) => {
         margin: SIZES.base,
         marginBottom: SIZES.extraLarge,
         ...SHADOWS.dark,
-      }}
-    >
-      <View style={{ width: "100%", height: 250 }}>
+      }}>
+      <View style={{ width: '100%', height: 250 }}>
         <Image
           source={data.image}
           resizeMode="cover"
           style={{
-            width: "100%",
-            height: "100%",
+            width: '100%',
+            height: '100%',
             borderTopLeftRadius: ROUNDED.base,
             borderTopRightRadius: ROUNDED.base,
           }}
@@ -36,7 +36,7 @@ const NFTCard = ({ data }: NFTCardType) => {
         <CircleButton imgUrl={assets.heart} top={10} right={10} />
       </View>
       <SubInfo />
-      <View style={{ width: "100%", padding: SIZES.font }}>
+      <View style={{ width: '100%', padding: SIZES.font }}>
         <NFTTitle
           title={data.name}
           subTitle={data.creator}
@@ -46,11 +46,10 @@ const NFTCard = ({ data }: NFTCardType) => {
         <View
           style={{
             marginTop: SIZES.font,
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}>
           <ETHPrice price={data.price} />
           <RectButton
             minWidth={120}

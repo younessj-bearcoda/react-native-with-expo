@@ -1,8 +1,9 @@
-import { View, Text } from "react-native";
-import { useState } from "react";
-import { ETHPrice, NFTTitle } from "../components/SubInfo";
-import { COLORS, SIZES, FONTS } from "../constants";
-import type { NFTItemType } from "../types";
+import { useState } from 'react';
+import { View, Text } from 'react-native';
+
+import { ETHPrice, NFTTitle } from '../components/SubInfo';
+import { COLORS, SIZES, FONTS } from '../constants';
+import type { NFTItemType } from '../types';
 
 type DetailsDescriptionPropsType = {
   data: NFTItemType;
@@ -26,12 +27,11 @@ const DetailsDescription = ({ data }: DetailsDescriptionPropsType) => {
     <>
       <View
         style={{
-          width: "100%",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+          width: '100%',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
         <NFTTitle
           title={data.name}
           subTitle={data.creator}
@@ -46,8 +46,7 @@ const DetailsDescription = ({ data }: DetailsDescriptionPropsType) => {
             fontSize: SIZES.font,
             fontFamily: FONTS.semiBold,
             color: COLORS.primary,
-          }}
-        >
+          }}>
           Description
         </Text>
         <View style={{ marginTop: SIZES.base }}>
@@ -57,19 +56,17 @@ const DetailsDescription = ({ data }: DetailsDescriptionPropsType) => {
               fontFamily: FONTS.regular,
               color: COLORS.secondary,
               lineHeight: SIZES.large,
-            }}
-          >
+            }}>
             {text}
-            {!readMore && "..."}
+            {!readMore && '...'}
             <Text
               onPress={handleReadMorePress}
               style={{
                 fontSize: SIZES.small,
                 fontFamily: FONTS.semiBold,
                 color: COLORS.primary,
-              }}
-            >
-              {readMore ? "Show Less" : "Read More"}
+              }}>
+              {readMore ? 'Show Less' : 'Read More'}
             </Text>
           </Text>
         </View>

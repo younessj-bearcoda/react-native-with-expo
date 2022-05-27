@@ -1,13 +1,6 @@
-import { Fragment } from "react";
-import {
-  View,
-  Text,
-  SafeAreaView,
-  Image,
-  StatusBar,
-  FlatList,
-} from "react-native";
-import { COLORS, SIZES, SHADOWS, FONTS, assets } from "../constants";
+import { Fragment } from 'react';
+import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from 'react-native';
+
 import {
   CircleButton,
   RectButton,
@@ -15,32 +8,28 @@ import {
   FocusedStatusBar,
   DetailsDescription,
   DetailsBid,
-} from "../components";
-
-import type { NFTItemType, WithNavigationPropType } from "../types";
+} from '../components';
+import { COLORS, SIZES, SHADOWS, FONTS, assets } from '../constants';
+import type { NFTItemType, WithNavigationPropType } from '../types';
 
 type DetailsHeaderPropsType = WithNavigationPropType & {
   data: NFTItemType;
 };
 
 const DetailsHeader = ({ data, navigation }: DetailsHeaderPropsType) => (
-  <View style={{ width: "100%", height: 373 }}>
-    <Image
-      source={data.image}
-      resizeMode="cover"
-      style={{ width: "100%", height: "100%" }}
-    />
+  <View style={{ width: '100%', height: 373 }}>
+    <Image source={data.image} resizeMode="cover" style={{ width: '100%', height: '100%' }} />
     <CircleButton
       imgUrl={assets.left}
       handlePress={() => navigation.goBack()}
       left={15}
-      top={(StatusBar.currentHeight || 0) + 10}
+      top={(StatusBar.currentHeight ?? 0) + 10}
     />
     <CircleButton
       imgUrl={assets.heart}
       handlePress={() => navigation.goBack()}
       right={15}
-      top={(StatusBar.currentHeight || 0) + 10}
+      top={(StatusBar.currentHeight ?? 0) + 10}
     />
   </View>
 );
@@ -60,23 +49,18 @@ const Details = ({ route, navigation }: DetailsPropsType) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-      <FocusedStatusBar
-        barStyle="dark-content"
-        backgroundColor="transparent"
-        translucent={true}
-      />
+      <FocusedStatusBar barStyle="dark-content" backgroundColor="transparent" translucent />
       <View
         style={{
-          width: "100%",
-          position: "absolute",
+          width: '100%',
+          position: 'absolute',
           bottom: 0,
           paddingVertical: SIZES.font,
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'rgba(255, 255, 255, 0.5)',
           zIndex: 1,
-        }}
-      >
+        }}>
         <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark} />
       </View>
       <FlatList
@@ -86,7 +70,7 @@ const Details = ({ route, navigation }: DetailsPropsType) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3 }}
         ListHeaderComponent={() => (
-          <Fragment>
+          <>
             <DetailsHeader data={data} navigation={navigation} />
             <SubInfo />
             <View style={{ padding: SIZES.font }}>
@@ -97,13 +81,12 @@ const Details = ({ route, navigation }: DetailsPropsType) => {
                     fontSize: SIZES.font,
                     fontFamily: FONTS.semiBold,
                     color: COLORS.primary,
-                  }}
-                >
+                  }}>
                   Current Bid
                 </Text>
               )}
             </View>
-          </Fragment>
+          </>
         )}
       />
     </SafeAreaView>
