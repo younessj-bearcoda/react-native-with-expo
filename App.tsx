@@ -2,10 +2,10 @@ import { StatusBar } from 'expo-status-bar'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, DefaultTheme, Theme } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
-
 import { Home, Details } from './screens'
 
-const Stack = createStackNavigator()
+const { Navigator, Screen } = createStackNavigator()
+
 const theme: Theme = {
   ...DefaultTheme,
   colors: {
@@ -28,10 +28,10 @@ const App = () => {
 
   return (
     <NavigationContainer theme={theme}>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
-        <Stack.Screen name='Home' component={Home}/>
-        <Stack.Screen name='Details' component={Details}/>
-      </Stack.Navigator>
+      <Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
+        <Screen name='Home' component={Home}/>
+        <Screen name='Details' component={Details}/>
+      </Navigator>
     </NavigationContainer>
   )
 }

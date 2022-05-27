@@ -16,6 +16,7 @@ export const SIZES = {
 };
 
 export const ROUNDED = {
+  small: 8,
   base: 14,
   large: 18,
   extraLarge: 24,

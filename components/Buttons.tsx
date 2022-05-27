@@ -1,51 +1,86 @@
-import React from 'react'
-import { TouchableOpacity, View, Text, Image, ImageSourcePropType, GestureResponderEvent } from 'react-native'
-import { COLORS, ROUNDED, SHADOWS } from '../constants'
+import React from "react";
+import {
+  TouchableOpacity,
+  View,
+  Text,
+  Image,
+  ImageSourcePropType,
+  GestureResponderEvent,
+} from "react-native";
+import { COLORS, FONTS, ROUNDED, SHADOWS, SIZES } from "../constants";
 
 export type ButtonPropsType = {
-  //
-}
+  handlePress?: (event: GestureResponderEvent) => void;
+};
 
-export type CircleButtonType = {
-  imgUrl: ImageSourcePropType,
-  handlePress?: (event: GestureResponderEvent) => void,
-  top?: number,
-  right?: number,
-}
+export type CircleButtonType = ButtonPropsType & {
+  imgUrl: ImageSourcePropType;
+  top?: number;
+  right?: number;
+  left?: number;
+};
 
-export type RectButtonPropsType = ButtonPropsType | {
-  //
-}
+export type RectButtonPropsType = ButtonPropsType & {
+  minWidth: number;
+  fontSize: number;
+};
 
-export const CircleButton = ({ imgUrl, handlePress, ...props }: CircleButtonType) => {
+export const CircleButton = ({
+  imgUrl,
+  handlePress,
+  ...props
+}: CircleButtonType) => {
   return (
-    <TouchableOpacity 
-      style={{ 
-        position: 'absolute',
+    <TouchableOpacity
+      style={{
+        position: "absolute",
         width: 40,
         height: 40,
         backgroundColor: COLORS.white,
-        borderRadius: ROUNDED.extraLarge, 
-        alignItems: 'center',
-        justifyContent: 'center',
+        borderRadius: ROUNDED.extraLarge,
+        alignItems: "center",
+        justifyContent: "center",
         ...SHADOWS.light,
         ...props,
-      }} onPress={ handlePress }>
-        <Image 
-          source={imgUrl}
-          resizeMode="contain"
-          style={{ width: 24, height: 24 }}
-        />
+      }}
+      onPress={handlePress}
+    >
+      <Image
+        source={imgUrl}
+        resizeMode="contain"
+        style={{ width: 24, height: 24 }}
+      />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-
-
-export const RectButton = () => {
+export const RectButton = ({
+  minWidth,
+  fontSize,
+  handlePress,
+  ...props
+}: RectButtonPropsType) => {
   return (
-    <View>
-      <Text>RectButton</Text>
-    </View>
-  )
-}
+    <TouchableOpacity
+      style={{
+        backgroundColor: COLORS.primary,
+        borderRadius: ROUNDED.extraLarge,
+        minWidth: minWidth,
+        padding: SIZES.small,
+        ...props,
+      }}
+      onPress={handlePress}
+    >
+      <Text
+        style={{
+          fontFamily: FONTS.semiBold,
+          fontSize: fontSize,
+          color: COLORS.white,
+          textAlign: "center",
+        }}
+      >
+        Place a bid
+      </Text>
+    </TouchableOpacity>
+  );
+};
