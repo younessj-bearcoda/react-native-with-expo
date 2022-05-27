@@ -7,5 +7,8 @@ module.exports = {
         project: './tsconfig.json',
       },
     },
-  ]
+  ],
+  settings: {
+    'import/ignore': ['react-native'],
+  },
 };

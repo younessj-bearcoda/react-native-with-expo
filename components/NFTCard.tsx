@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { View, Image, Text } from 'react-native';
+import { View, Image } from 'react-native';
 
 import { COLORS, SIZES, SHADOWS, ROUNDED, assets } from '../constants';
 import type { NFTItemType } from '../types';

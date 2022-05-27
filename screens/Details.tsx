@@ -23,13 +23,13 @@ const DetailsHeader = ({ data, navigation }: DetailsHeaderPropsType) => (
       imgUrl={assets.left}
       handlePress={() => navigation.goBack()}
       left={15}
-      top={(StatusBar.currentHeight || 0) + 10}
+      top={(StatusBar.currentHeight ?? 0) + 10}
     />
     <CircleButton
       imgUrl={assets.heart}
       handlePress={() => navigation.goBack()}
       right={15}
-      top={(StatusBar.currentHeight || 0) + 10}
+      top={(StatusBar.currentHeight ?? 0) + 10}
     />
   </View>
 );
