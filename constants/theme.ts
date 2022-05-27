@@ -20,7 +20,7 @@ export const ROUNDED = {
   base: 14,
   large: 18,
   extraLarge: 24,
-}
+};
 
 export const FONTS = {
   bold: "InterBold",

@@ -1,7 +1,8 @@
 import { View, Text } from "react-native";
 import { useState } from "react";
 import { ETHPrice, NFTTitle } from "../components/SubInfo";
-import { COLORS, SIZES, FONTS, NFTItemType } from "../constants";
+import { COLORS, SIZES, FONTS } from "../constants";
+import type { NFTItemType } from "../types";
 
 type DetailsDescriptionPropsType = {
   data: NFTItemType;

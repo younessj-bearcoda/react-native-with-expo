@@ -1,15 +1,9 @@
 import { View, Image, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { CircleButton, RectButton } from "./Buttons";
-import {
-  COLORS,
-  SIZES,
-  SHADOWS,
-  ROUNDED,
-  NFTItemType,
-  assets,
-} from "../constants";
 import SubInfo, { ETHPrice, NFTTitle } from "./SubInfo";
+import { COLORS, SIZES, SHADOWS, ROUNDED, assets } from "../constants";
+import type { NFTItemType } from "../types";
 
 type NFTCardType = {
   data: NFTItemType;
@@ -61,7 +55,7 @@ const NFTCard = ({ data }: NFTCardType) => {
           <RectButton
             minWidth={120}
             fontSize={SIZES.font}
-            handlePress={() => navigation.navigate("Details", {data})}
+            handlePress={() => navigation.navigate('Details', { data })}
           />
         </View>
       </View>

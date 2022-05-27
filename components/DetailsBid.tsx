@@ -1,7 +1,7 @@
 import { View, Text, Image } from "react-native";
-import React from "react";
 import { ETHPrice } from "../components/SubInfo";
-import { COLORS, SIZES, FONTS, BidItemType } from "../constants";
+import { COLORS, SIZES, FONTS } from "../constants";
+import type { BidItemType } from "../types";
 
 type DetailsBidPropsType = {
   bid: BidItemType;

@@ -1,6 +1,6 @@
-export * from './dummy'
-export * from './theme'
+export * from "./dummy";
+export * from "./theme";
 
-import * as assets from './assets'
+import * as assets from "./assets";
 
-export { assets }
+export { assets };

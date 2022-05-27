@@ -2,8 +2,8 @@ import { View, Text, Image, TextInput } from "react-native";
 import { COLORS, FONTS, SIZES, assets, ROUNDED } from "../constants";
 
 type HomeHeaderPropsType = {
-  onSearch: (value: string) => void
-}
+  onSearch: (value: string) => void;
+};
 
 const HomeHeader = ({ onSearch }: HomeHeaderPropsType) => {
   return (

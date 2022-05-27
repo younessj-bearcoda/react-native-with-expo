@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, DefaultTheme, Theme } from '@react-navigation/native'
 import { useFonts } from 'expo-font'

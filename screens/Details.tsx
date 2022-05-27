@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import {
   View,
   Text,
@@ -6,14 +7,7 @@ import {
   StatusBar,
   FlatList,
 } from "react-native";
-import {
-  COLORS,
-  SIZES,
-  SHADOWS,
-  FONTS,
-  assets,
-  NFTItemType,
-} from "../constants";
+import { COLORS, SIZES, SHADOWS, FONTS, assets } from "../constants";
 import {
   CircleButton,
   RectButton,
@@ -22,11 +16,11 @@ import {
   DetailsDescription,
   DetailsBid,
 } from "../components";
-import { Fragment } from "react";
 
-type DetailsHeaderPropsType = {
+import type { NFTItemType, WithNavigationPropType } from "../types";
+
+type DetailsHeaderPropsType = WithNavigationPropType & {
   data: NFTItemType;
-  navigation: any;
 };
 
 const DetailsHeader = ({ data, navigation }: DetailsHeaderPropsType) => (
@@ -51,7 +45,7 @@ const DetailsHeader = ({ data, navigation }: DetailsHeaderPropsType) => (
   </View>
 );
 
-type DetailsPropsType = {
+type DetailsPropsType = WithNavigationPropType & {
   route: {
     key: string;
     name: string;
@@ -59,18 +53,10 @@ type DetailsPropsType = {
       data: NFTItemType;
     };
   };
-  navigation: any;
 };
 
 const Details = ({ route, navigation }: DetailsPropsType) => {
   const { data } = route.params;
-  console.log(
-    "---------------------------------------------------------------"
-  );
-  console.log(data);
-  console.log(
-    "---------------------------------------------------------------"
-  );
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
